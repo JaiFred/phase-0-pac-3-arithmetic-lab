@@ -5,18 +5,38 @@ beforeEach(function() {
   b = Math.floor(Math.random() * 1000)
 })
 
+function makeInt(string) {
+  return parseInt(string, 10)
+}
+
+function add(a, b) {
+  return a + b;
+ }
+
 describe('basic math functions', function () {
   it("'add()' is a valid function", function() {
     expect(add).toExist
   })
 
+function subtract() {
+    return a - b;
+  }
+  
   it("'subtract()' is a valid function", function() {
     expect(subtract).toExist
   })
 
+function multiply() {
+    return a * b;
+   }
+
   it("'multiply()' is a valid function", function() {
     expect(multiply).toExist
   })
+
+function divide() {
+    return a / b;
+   }
 
   it("'divide()' is a valid function", function() {
     expect(divide).toExist
@@ -37,10 +57,18 @@ describe('basic math functions', function () {
   it('divide(a, b) divides a by b and returns the result', function() {
     expect(divide(a, b)).toEqual(a / b)
   })
-  
+
+
+function increment(n){
+  return n+1;
+}  
   it('increment(n) increments n and returns the result', function() {
     expect(increment(a)).toEqual(a + 1)
   })
+
+function decrement(n){
+  return n-1;
+}  
   
   it('decrement(n) decrements n and returns the result', function() {
     expect(decrement(a)).toEqual(a - 1)
@@ -49,7 +77,9 @@ describe('basic math functions', function () {
 
 
 
-
+function makeInt(a, base){
+  return parseInt(a, 10);
+}
 describe('makeInt(n)', function() {
   it('parses n as an integer and returns the parsed integer', function() {
     expect(makeInt(a.toString())).toEqual(a)
@@ -63,6 +93,10 @@ describe('makeInt(n)', function() {
     expect(isNaN(makeInt('sldkjflksjf'))).toEqual(true)
   })
 })
+
+function preserveDecimal(a){
+  return parseFloat(a);
+}
 
 describe('preserveDecimal(n)', function() {
   it('preserves n\'s decimals (it parses n as a floating point number) and returns the parsed number', function() {
